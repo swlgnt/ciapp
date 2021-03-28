@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use CodeIgniter\Router\Router;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -33,6 +35,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
+
+$routes->get('buku/(:segment)', 'Buku::detail/$1');
 // $routes->get('/pages', 'Pages::index');
 
 // $routes->get('/coba/about', 'Coba::about');
