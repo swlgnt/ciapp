@@ -35,8 +35,14 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
+$routes->get('buku/tambah', 'Buku::tambah/$1'); //routes kusus tambah buku, jika tidak diberi ini, maka masuk ke routes buku/any dan dianggap mencari buku dengan id tertentu
+$routes->get('buku/ubah/(:segment)', 'Buku::ubah/$1');
+$routes->delete('buku/(:num)', 'Buku::hapus/$1');
+$routes->get('buku/(:any)', 'Buku::detail/$1');
 
-$routes->get('buku/(:segment)', 'Buku::detail/$1');
+
+
+// $routes->get('buku/','Buku::create');
 // $routes->get('/pages', 'Pages::index');
 
 // $routes->get('/coba/about', 'Coba::about');
