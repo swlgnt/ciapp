@@ -15,7 +15,14 @@
                     <p class="card-text"><small class="text-muted">Ditulis oleh: <?= $buku['penulis']; ?></small></p>
                 </div>
                 <div class="card-footer">
-                    <a href="" class="btn btn-warning">Edit</a> <a href="" class="btn btn-danger">Hapus</a>
+                    <a href="/buku/ubah/<?= $buku['slug']; ?>" class="btn btn-warning">Edit</a>
+                    <form action="/buku/<?= $buku['id']; ?>" method="post" class="d-inline">
+                        <?= csrf_field(); ?>
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger"
+                            onclick="return confirm('Apakah anda yakin data tersebut dihapus?')">Hapus</button>
+                    </form>
+                    <!-- <a href="/buku/hapus/<?= $buku['id']; ?>" class="btn btn-danger">Hapus</a> -->
                 </div>
                 <div class="card-footer">
                     <a href="/buku" class="btn btn-primary">Kembali Ke Daftar Buku</a>
