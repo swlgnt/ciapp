@@ -9,6 +9,7 @@ class BukuModel extends Model
     protected $table = 'buku';
     //protected $primaryKey = 'id'; // tidak perlu karena di basemodel sudah ada
     protected $useTimestamps = true;
+    protected $allowedFields = ['judul','slug','penerbit','penulis','sampul'];
     public function getBuku($slug = false)
     {
         if ($slug == false) {
