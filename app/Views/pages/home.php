@@ -8,7 +8,7 @@
                 accusantium, tempore accusamus assumenda maxime, ut in dolor quos aliquam rem vel neque repellat maiores
                 sequi.</p>
             <?php 
-      d($test);
+                d($test);
             ?>
         </div>
     </div>
