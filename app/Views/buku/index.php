@@ -14,13 +14,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($buku as $bk) : ?>
                     <tr>
                         <th scope="row">1</th>
-                        <td><img src="/img/sampul.jpeg" alt="" class="sampul"></td>
-                        <td>Buku Saku</td>
+                        <td><img src="/img/<?= $bk['sampul']; ?>" alt="" class="sampul"></td>
+                        <td><?= $bk['judul']; ?></td>
                         <td><a href="" class="btn btn-success">Lihat detail buku</a></td>
                     </tr>
-
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
