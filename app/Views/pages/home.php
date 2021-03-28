@@ -4,7 +4,9 @@
     <div class="row">
         <div class="col">
             <h1>Home Page</h1>
-            test
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio corrupti dolorum alias officiis ab
+                accusantium, tempore accusamus assumenda maxime, ut in dolor quos aliquam rem vel neque repellat maiores
+                sequi.</p>
             <?php 
       d($test);
             ?>
