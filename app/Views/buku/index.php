@@ -19,7 +19,7 @@
                         <th scope="row">1</th>
                         <td><img src="/img/<?= $bk['sampul']; ?>" alt="" class="sampul"></td>
                         <td><?= $bk['judul']; ?></td>
-                        <td><a href="" class="btn btn-success">Lihat detail buku</a></td>
+                        <td><a href="/buku/<?= $bk['slug']; ?>" class="btn btn-success">Lihat detail buku</a></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
