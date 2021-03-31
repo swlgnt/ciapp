@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Prophecy\Doubler\Generator\Node\ReturnTypeNode;
 use App\Models;
 use App\Models\BukuModel;
+use CodeIgniter\Validation\Rules;
 use PHPUnit\TextUI\XmlConfiguration\MoveWhitelistDirectoriesToCoverage;
 
 class Buku extends BaseController
@@ -68,11 +69,17 @@ class Buku extends BaseController
                     'required' => '{field} buku harus diisi.',
                     'is_unique' => '{field} sudah ada di database.'
                 ]
+                ],
+            'sampul' => [
+                'rules' => 'uploaded[sampul]',
+                'errors' => '{field} harus berupa gambar JPG,PNG,JPEG atau sejenisnya'
             ]
+
         ])) {
-            $valid = \Config\Services::validation();
+            // $valid = \Config\Services::validation();
             // dd($valid);
-            return redirect()->to('/buku/tambah')->withInput()->with('validation', $valid);
+            // return redirect()->to('/buku/tambah')->withInput()->with('validation', $valid);
+            return redirect()->to('/buku/tambah')->withInput();
         }
 
         $slug=url_title($this->request->getVar('judul'),'-',true);
