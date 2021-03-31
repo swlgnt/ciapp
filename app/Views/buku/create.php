@@ -5,7 +5,7 @@
         <div class="col-8">
             <h2>Tambah Data</h2>
             <!-- <?//= $valid->listErrors(); ?> -->
-            <form action="/buku/simpan" method="POST">
+            <form action="/buku/simpan" method="POST" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Judul</label>
@@ -27,8 +27,12 @@
                         value="<?= old('penerbit'); ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Sampul</label>
-                    <input class="form-control" name="sampul" type="file" id="formFile" value="<?= old('sampul'); ?>">
+                    <label for="sampul" class="form-label">Pilihh Gambar Sampul</label>
+                    <input class="form-control <?= ($valid->hasError('sampul')) ? 'is-invalid' : ''; ?>" name="sampul"
+                        type="file" id="sampul">
+                    <div class="invalid-feedback">
+                        <?= $valid->getError('sampul'); ?>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Tambah Data</button>
